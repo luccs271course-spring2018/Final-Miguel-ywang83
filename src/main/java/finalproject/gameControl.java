@@ -141,8 +141,8 @@ public class gameControl extends Panel implements Runnable, KeyListener {
       // Score += 50;
       Point addPoint = (Point) newPoint.clone();
       snake.push(addPoint);
-      placeApple
-      score ++;
+      placeApple();
+      Score ++;
 
     } else if (newPoint.x < 0 || newPoint.x > (PLAY_AREA_WIDTH - 1)) {
       // reset game
