@@ -73,7 +73,8 @@ public class gameControl extends Panel implements Runnable, KeyListener {
   public void DrawScore(Graphics g) {
     g.setColor(Color.black);
     g.setFont(new Font("arial", Font.PLAIN, 14));
-    g.drawString("Score: " + Score, 0, 20);
+    // g.drawString("Score: " + Score, 0, 20);
+    g.drawString("Score: " + (int) countScore.score(snake.size()), 0, 20);
   }
 
   public void DrawApple(Graphics g) {
@@ -137,25 +138,11 @@ public class gameControl extends Panel implements Runnable, KeyListener {
 
     if (newPoint.equals(apple)) {
       // when snake eats apple
-      Score += 50;
+      // Score += 50;
       Point addPoint = (Point) newPoint.clone();
-
-      switch (direction) {
-        case Direction.up:
-          newPoint = new Point(head.x, head.y - 1);
-          break;
-        case Direction.down:
-          newPoint = new Point(head.x, head.y + 1);
-          break;
-        case Direction.left:
-          newPoint = new Point(head.x - 1, head.y);
-          break;
-        case Direction.right:
-          newPoint = new Point(head.x + 1, head.y);
-          break;
-      }
       snake.push(addPoint);
-      placeApple();
+      placeApple
+      score ++;
 
     } else if (newPoint.x < 0 || newPoint.x > (PLAY_AREA_WIDTH - 1)) {
       // reset game
