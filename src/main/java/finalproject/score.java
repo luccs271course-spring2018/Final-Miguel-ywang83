@@ -1,6 +1,3 @@
 package finalproject;
 
-
-public class score {
-
-}
+public class score {}

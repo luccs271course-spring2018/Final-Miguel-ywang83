@@ -2,7 +2,6 @@ package finalproject;
 
 import static org.junit.Assert.*;
 
-import java.util.Map;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,19 +9,11 @@ import org.junit.Test;
 public class Testfinal {
 
   @Before
-  public void setUp() {
-
-  }
+  public void setUp() {}
 
   @After
-  public void tearDown() {
-
-  }
+  public void tearDown() {}
 
   @Test
-  public void t() {
-
-  }
-
-
-  }
+  public void t() {}
+}
