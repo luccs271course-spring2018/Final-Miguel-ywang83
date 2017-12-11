@@ -3,6 +3,12 @@ package finalproject;
 import java.awt.event.*;
 import javax.swing.*;
 
+/*
+  - This screen is not where the game is played.
+  - In this screen the user has the option to start the game.
+  - If "Start game" is pressed user will be directed to game play screen.
+*/
+
 public class Main implements ActionListener {
   public static void main(String[] args) {
     Main p1 = new Main();

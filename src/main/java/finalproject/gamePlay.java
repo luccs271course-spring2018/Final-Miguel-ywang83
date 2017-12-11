@@ -3,6 +3,10 @@ package finalproject;
 import java.awt.*;
 import javax.swing.*;
 
+/*
+  - Actual game screen where game is played
+  - Creates a new game with default settings
+*/
 public class gamePlay {
   JFrame frame = new JFrame("Level 1");
   gameControl game = new gameControl();

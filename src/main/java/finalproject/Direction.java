@@ -1,5 +1,6 @@
 package finalproject;
 
+// Snake movement
 public class Direction {
   public static final int noDirection = 0;
   public static final int up = 1;

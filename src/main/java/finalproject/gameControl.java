@@ -6,6 +6,15 @@ import java.awt.event.KeyListener;
 import java.util.LinkedList;
 import java.util.Random;
 
+/*
+  - Play area (boundaries) are set
+  - Default length snake is created
+  - Apple is placed at a random location within the play area
+  - Behavior for every apple that is eaton (increase snake length & score)
+  - Conditions for a game reset (snake eats itself or snake hits wall)
+  - Movement of snake using arrow keys
+*/
+
 public class gameControl extends Panel implements Runnable, KeyListener {
   private LinkedList<Point> snake;
   private Point apple;
@@ -34,11 +43,6 @@ public class gameControl extends Panel implements Runnable, KeyListener {
     apple = new Point();
     defaultSettings();
     placeApple();
-
-    /*snake.add(new Point(15,15));
-    snake.add(new Point(15,14));
-    snake.add(new Point(15,13));
-    placeApple(); */
 
     this.addKeyListener(this);
   }
@@ -73,7 +77,6 @@ public class gameControl extends Panel implements Runnable, KeyListener {
   public void DrawScore(Graphics g) {
     g.setColor(Color.black);
     g.setFont(new Font("arial", Font.PLAIN, 14));
-    // g.drawString("Score: " + Score, 0, 20);
     g.drawString("Score: " + (int) countScore.score(snake.size()), 0, 20);
   }
 
@@ -137,23 +140,23 @@ public class gameControl extends Panel implements Runnable, KeyListener {
     snake.remove(snake.peekLast());
 
     if (newPoint.equals(apple)) {
-      // when snake eats apple
-      // Score += 50;
+      // when snake eats apple increase score
+
       Point addPoint = (Point) newPoint.clone();
       snake.push(addPoint);
       placeApple();
-      Score ++;
+      Score++;
 
     } else if (newPoint.x < 0 || newPoint.x > (PLAY_AREA_WIDTH - 1)) {
-      // reset game
+      // if snake hits wall reset game
       defaultSettings();
       return;
     } else if (newPoint.y < 0 || newPoint.y > (PLAY_AREA_HEIGHT - 1)) {
-      // reset game
+      // if snake hits wall reset game
       defaultSettings();
       return;
     } else if (snake.contains(newPoint)) {
-      // reset game
+      // if snake eats itself reset game
       defaultSettings();
       return;
     }
